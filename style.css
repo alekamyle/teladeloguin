@@ -1,0 +1,111 @@
+body{
+    background-color: #eea9ef;
+}
+
+a{
+            color: #a615e8;
+            font-size: 15px;
+            font-family: "Feather Bold";
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-block;
+            padding: 12px 20px;
+            margin: 20px;
+            margin-left: 500px;
+            align-items: center;
+            border: 2px solid #0f0c0c;
+            border-radius: 16px;
+            background-color: #ffffff;
+        }
+        
+        form{
+            max-width: 400px;
+            margin: 0 auto;
+           
+        }
+
+        h1{
+            color: #3C3C3C;
+            margin: 10px;
+            font-size: 26px;
+            text-align: center;
+            font-family: "Georgia";
+        }
+
+        .login{
+            display: flex;
+            align-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+            border-radius: 5px;
+           
+        }
+
+        label{
+            display: flex;
+            margin-top: 10px;
+            font-family: "";
+            font-family: "Georgia";
+           
+        }
+
+        input[type=text]{
+            color: #000000;
+            font-size: 15px;
+            font-family: Georgia;
+            border: 2px solid #881db5;
+            box-sizing: border-box;
+            border-radius: 10px;
+            width: 100%;
+            margin: 8px 0;
+            display: inline-block;
+            padding: 12px 20px;
+            background: #F7F7F7;
+          
+        }
+        input[type=email]{
+            color: #000000;
+            font-size: 15px;
+            font-family: Georgia;
+            border: 2px solid #8915ac;
+            box-sizing: border-box;
+            border-radius: 10px;
+            width: 100%;
+            margin: 8px 0;
+            display: inline-block;
+            padding: 12px 20px;
+            background: #F7F7F7;
+            
+        }
+
+
+        input[type=password]{
+            color: #000000;
+            font-size: 15px;
+            font-family: Georgia;
+            border: 2px solid #8b12be;
+            box-sizing: border-box;
+            border-radius: 10px;
+            width: 100%;
+            margin: 8px 0;
+            display: inline-block;
+            padding: 12px 20px;
+            background: #F7F7F7;
+        }
+
+        button{
+            color: #000000;
+            font-size: 15px;
+            font-family: "Feather Bold";
+            letter-spacing: .8px;
+            text-transform: uppercase;
+            width: 100%;
+            border: none;
+            padding: 12px 20px;
+            margin-top: 10px;
+            border-radius: 12px;
+            background-color: #941cf6;
+        }

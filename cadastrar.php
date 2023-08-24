@@ -1,6 +1,6 @@
 <?php
 require_once('classes/Usuarios.php');
-require_once('conexao/conexcao.php');
+require_once('conexao/conexao.php');
 
 $database = new conexao ();
 $db = $database -> getConnection();
@@ -12,11 +12,11 @@ if(isset($_POST['cadastrar'])){
     $senha = $_POST['senha'];
     $confSenha = $_POST['confSenha'];
 
-        if($usuario->cadastrar($nome,$email,$senha,$confSenha)){
+    if($usuario->cadastrar($nome,$email,$senha,$confSenha)){
        echo "cadastro realizado com sucesso";
-}else{
+    }else{
         echo "erro ao cadastrar!";
-}
+    }
 }
 ?>
 
@@ -27,9 +27,11 @@ if(isset($_POST['cadastrar'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet"  href="style.css">
 </head>
 <body>
     <form action="" method = "POST">
+    <h1>faça seu cadastro</h1>
         <label for ="">nome de usuario</label>
         <input type="text" name="nome">
 
@@ -37,10 +39,10 @@ if(isset($_POST['cadastrar'])){
          <input type="email" name="email">
 
          <label for ="senha">senha</label>
-         <input type="password" name="senha">
+         <input type="password" name="senha" maxlength=8 >
 
          <label for ="">confirme senha</label>
-         <input type="password" name="confSenha">
+         <input type="password" name="confSenha" maxlength=8 >
 
          <button tupe="submit" name="cadastrar">cadastrar</button>
 </form>

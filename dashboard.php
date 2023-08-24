@@ -1,13 +1,13 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['email'])){
+if(!isset($_SESSION['nome'])){
     hearder("Location: index.php");
     exit();
 
 }
 
-$email = $_SESSION['email'];
+$nome = $_SESSION['nome'];
 
 ?>
 
@@ -20,7 +20,7 @@ $email = $_SESSION['email'];
 </head>
 <body>
     <h1>painel de controle]</h1>
-    <p>seja bem vindo<?php echo $email; ?> </p>
+    <p>seja bem vindo<?php echo $nome; ?> </p>
 
     <a href="logout.php">sair</a>
     

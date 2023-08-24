@@ -1,6 +1,6 @@
 
 <?php
-include ('conexao/conexcao.php');
+include ('conexao/conexao.php');
 
 $db = new conexao ();
 
@@ -16,7 +16,12 @@ public function cadastrar($nome, $email, $senha, $confsenha)
 {
     if ($senha === $confsenha){ 
 
-        $emailesistente=$this->verificaremailexistente($email);
+        $nomeexistente=$this->verificarnomeexistente($nome);
+        if($nomeexistente){
+            print"<script> alert('nome ja cadastrado')</script>";
+            return false;
+        }
+        $emailexistente=$this->verificaremailexistente($email);
         if($emailesistente){
             print"<script> alert('Email ja cadastrado')</script>";
             return false;
@@ -40,19 +45,28 @@ public function cadastrar($nome, $email, $senha, $confsenha)
     }
 }
 
-private function verificaremailexistente($email){
- $sql="SELECT COUNT(*) FROM usuarios WHERE email =?";
+private function verificarnomeexistente($nome){
+ $sql="SELECT COUNT(*) FROM usuarios WHERE nome =?";
  $stmt= $this->conn-> prepare ($sql);
- $stmt->bindParam(1,$email);
+ $stmt->bindParam(1,$nome);
  $stmt->execute ();
 
     return $stmt->fetchColumn()>0;
 
 }
-public function logar ($email,$senha){
-    $sql= "SELECT * FROM usuarios WHERE email = :email";
+private function verificaremailexistente($email){
+    $sql="SELECT COUNT(*) FROM usuarios WHERE email =?";
+    $stmt= $this->conn-> prepare ($sql);
+    $stmt->bindParam(1,$email);
+    $stmt->execute ();
+   
+       return $stmt->fetchColumn()>0;
+   
+   }
+public function logar ($nome,$senha){
+    $sql= "SELECT * FROM usuarios WHERE nome = :nome";
     $stmt= $this->conn->prepare($sql);
-    $stmt->bindValue(':email', $email);
+    $stmt->bindValue(':nome', $nome);
     $stmt->execute();
 
     if($stmt->rowCount() == 1){
